@@ -1,8 +1,7 @@
-; 左 ctrl キーの空打ちで ime の off/on を切り替える
-;
-; 左 ctrl キーの空打ちで ime を toggle
-; ctrl キーを押している間に他のキーを打つと通常の ctrl キーとして動作
-
+; 左 ctrl キーの空打ちで ime を off にする。
+; 右 ctrl キーの空打ちで ime を on にする。
+; ctrl キーを押している間に他のキーを打つと通常の ctrl キーとして動作。
+; AutoHotKey v1系で動作します。
 
 #Include IME.ahk
 
@@ -112,11 +111,16 @@ LCtrl up::
         if IME_GetConverting() >= 1 {
             Return
         }
-
-        If IME_GET() = 0
-            IME_SET(1)
-        ELSE
-            IME_SET(0)
+        IME_SET(0)
     }
 Return
 
+RCtrl up::
+    if (A_PriorHotkey == "*~RCtrl")
+    {
+        if IME_GetConverting() >= 1 {
+            Return
+        }
+        IME_SET(1)
+    }
+Return
