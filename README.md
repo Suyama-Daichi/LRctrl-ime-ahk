@@ -1,5 +1,5 @@
 # LRCtrl-ime-ahk
-
+AutoHotKey v1系で動作します。[事前にインストール](https://www.autohotkey.com/)しておいてください。
 以下のリポジトリの fork で LCtrl 空押しで IME OFF、RCtrl空押しでIME ONをできるようにしたものです。
 https://github.com/foresta/ctrl-ime-ahk
 
